@@ -1,7 +1,7 @@
 use bson::from_slice;
 use serde::{Serialize, Deserialize};
 use std::fs::File;
-use std::io::{Write, Cursor};
+use std::io::Write;
 use bson::{from_reader, to_bson, Bson, ser::to_vec, from_bson, Document};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -68,8 +68,6 @@ fn main() -> std::io::Result<()> {
     println!("{:?}", bson_vec);
 
     let mut moves: Vec<Move> = vec![];
-
-    let cur = Cursor::new(&bson_vec);
     
     for serialized_move in bson_vec {
         match from_slice::<Document>(&serialized_move) {
