@@ -8,7 +8,7 @@ fn main() {
 fn handle_stream(mut stream: TcpStream) {
     let mut buffer = [0; 1024];
     loop {
-        // TODO: buffer is reused across loop iterations, fix that
+        buffer.fill(0);
         match stream.read(&mut buffer) {
             Ok(size) => {
                 if size == 0 {
@@ -21,7 +21,7 @@ fn handle_stream(mut stream: TcpStream) {
                         return;
                     }
                 };
-                let response: String = validate_req(request).to_string();
+                let response = validate_req(request);
 
                 let _ = stream.write_all(response.as_bytes());
 
