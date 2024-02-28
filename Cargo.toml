@@ -18,6 +18,14 @@ path = "src/exercise_3.rs"
 [[bin]]
 name="exercise_4_redis"
 path = "src/exercise_4_redis.rs"
+
+[[bin]]
+name="exercise_5_server"
+path = "src/exercise_5_server.rs"
+
+[[bin]]
+name="exercise_5_client"
+path = "src/exercise_5_client.rs"
   
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
