@@ -27,6 +27,10 @@ path = "src/exercise_5_server.rs"
 name="exercise_5_client"
 path = "src/exercise_5_client.rs"
   
+[[bin]]
+name="bb4_exercise2"
+path = "src/bb4_exercise2.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
